@@ -1,0 +1,19 @@
+# Credenciais (NAO SUBIR)
+config.py
+
+# Logs
+*.log
+rei-castanhas-log.txt
+bot-output.log
+crash-log.txt
+
+# Arquivos temporarios
+test-pythonw.txt
+alive-test.txt
+__pycache__/
+*.pyc
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
