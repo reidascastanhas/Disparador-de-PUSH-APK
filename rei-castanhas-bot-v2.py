@@ -174,34 +174,24 @@ def log(mensagem):
 
 
 def testar_conexao_onesignal():
-    """Testa se a conexão com OneSignal funciona"""
-    log("🔍 Testando conexão com OneSignal...")
-    url = "https://onesignal.com/api/v1/notifications"
-    
-    payload = {
-        "app_id": APP_ID,
-        "included_segments": ["All"],
-        "headings": {"pt": "Teste", "en": "Test"},
-        "contents": {"pt": "Conexão OK", "en": "Connection OK"},
-    }
-    
-    data = json.dumps(payload).encode("utf-8")
-    req = urllib.request.Request(url, data=data)
-    req.add_header("Content-Type", "application/json")
+    """Verifica se APP_ID e API_KEY sao validos SEM enviar notificacao"""
+    log("🔍 Verificando credenciais OneSignal (sem disparar)...")
+    url = f"https://onesignal.com/api/v1/apps/{APP_ID}"
+
+    req = urllib.request.Request(url)
     req.add_header("Authorization", f"Basic {API_KEY}")
-    
+
     try:
         with urllib.request.urlopen(req, timeout=15) as response:
             result = json.loads(response.read().decode("utf-8"))
-            log(f"✅ Conexão com OneSignal OK! App ID validado.")
+            nome_app = result.get("name", "N/A")
+            players = result.get("players", 0)
+            log(f"✅ OneSignal OK! App: {nome_app} | Inscritos: {players}")
             return True
     except urllib.error.HTTPError as e:
         erro = e.read().decode('utf-8')
         log(f"❌ Erro na conexão: HTTP {e.code}")
         log(f"   {erro}")
-        log(f"⚠️  Verifique:")
-        log(f"   1. APP_ID está correto?")
-        log(f"   2. API_KEY está válida?")
         return False
     except Exception as e:
         log(f"❌ Erro: {str(e)}")
