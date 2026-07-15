@@ -33,66 +33,66 @@ if sys.platform == "win32":
 from config import APP_ID, API_KEY
 
 # ============================================================
-# CALENDARIO SEMANAL — SEMENTES, GRAOS, OLEAGINOSAS E CHAS
+# CALENDARIO SEMANAL — SEMANA DA CASTANHA DO PARA
 # 1 disparo por dia | 7 disparos por semana
 # dia: 0=Segunda, 1=Terca, 2=Quarta, 3=Quinta, 4=Sexta, 5=Sabado, 6=Domingo
 # ============================================================
 CALENDARIO = [
 
-    # SEGUNDA 08:00 — Sementes
+    # SEGUNDA 08:00 — Selenio: o mineral da castanha do Para
     {
         "dia": 0,
         "horario": "08:00",
-        "titulo": "🌱 Segunda das Sementes!",
-        "mensagem": "COMECE A SEMANA COM SEMENTES! Chia + linhaca no iogurte ou vitamina = FIBRA + OMEGA-3 logo cedo. 2 colheres bastam para transformar seu cafe da manha! Energia limpa para o dia inteiro 💪🌱"
+        "titulo": "🇧🇷 Semana da Castanha do Para!",
+        "mensagem": "VOCE SABIA? A castanha do Para e o alimento MAIS RICO EM SELENIO do planeta! Apenas 1 unidade por dia ja fornece toda a dose diaria. Selenio protege contra cancer, fortalece a tireoide e combate o envelhecimento! 🌰💚"
     },
 
-    # TERCA 08:00 — Oleaginosas
+    # TERCA 08:00 — Dose certa
     {
         "dia": 1,
         "horario": "08:00",
-        "titulo": "🥜 Terca das Oleaginosas!",
-        "mensagem": "OLEAGINOSAS SAO SUPERALIMENTOS! Amendoa = calcio + vitamina E. Castanha de caju = zinco + magnesio. Noz-peca = antioxidantes. Coma 30g por dia (1 punhado) e seu corpo AGRADECE! Qual voce vai comer hoje? 🌰✨"
+        "titulo": "🌰 Qual a dose certa?",
+        "mensagem": "CASTANHA DO PARA: a dose perfeita e 1 a 3 unidades por dia! Mais que isso pode ser excesso de selenio. Pouca quantidade, MAXIMO beneficio. Come 1 no cafe da manha e pronto! Simples, barato e poderoso! 💪✨"
     },
 
-    # QUARTA 08:30 — Graos
+    # QUARTA 08:30 — Tireoide e saude hormonal
     {
         "dia": 2,
         "horario": "08:30",
-        "titulo": "🌾 Quarta dos Graos!",
-        "mensagem": "VOCE SABIA? AVEIA reduz colesterol. QUINOA tem todos os aminoacidos essenciais. LINHACA combate inflamacao. GERGELIM fortalece ossos. Inclua pelo menos 1 grao por refeicao hoje! Seu corpo merece 🌾💪"
+        "titulo": "🦋 Castanha do Para e a Tireoide",
+        "mensagem": "SUA TIREOIDE PRECISA DE SELENIO! A castanha do Para ajuda a regular hormonios T3 e T4, combate o hipotireoidismo e reduz inflamacao da glandula. 1 castanha por dia = tireoide funcionando bem. Cuide da sua saude hormonal! 🦋🌰"
     },
 
-    # QUINTA 08:00 — Castanhas & Mix
+    # QUINTA 08:00 — Receita da semana
     {
         "dia": 3,
         "horario": "08:00",
-        "titulo": "🌰 QUINTA DAS CASTANHAS!",
-        "mensagem": "MONTE SEU MIX PERFEITO: Castanha do Para (2un) + Amendoas (5un) + Nozes (3un) + Semente de abobora (1 colher). Total: 30g de pura NUTRICAO! Proteina, gordura boa e minerais. Leve pro trabalho! 🌰🥜"
+        "titulo": "👨‍🍳 Receita: Leite de Castanha do Para!",
+        "mensagem": "RECEITA FACIL: Deixe 10 castanhas do Para de molho por 8h. Bata com 500ml de agua. Coe com pano. PRONTO! Leite vegetal cremoso, rico em selenio e gordura boa. Sem lactose, sem conservante. Use em cafe, vitamina ou receitas! 🥛🌰"
     },
 
-    # SEXTA 08:00 — Cha & Energia
+    # SEXTA 08:00 — Beleza e pele
     {
         "dia": 4,
         "horario": "08:00",
-        "titulo": "🎉 Sexta com Energia Natural!",
-        "mensagem": "SEXTOU! Comece com PASTA DE AMENDOIM CASEIRA na torrada integral + banana + chia por cima. Energia que dura ate o almoco! Oleaginosas no cafe da manha = gordura boa + saciedade. Bom dia! 🥜🍌"
+        "titulo": "✨ Castanha do Para e a Beleza!",
+        "mensagem": "PELE BONITA? CASTANHA DO PARA! O selenio combate radicais livres (antienvelhecimento), fortalece unhas e cabelos, e da brilho natural a pele. Melhor que cosmetico caro! 1 castanhinha por dia = beleza de dentro pra fora! 💅🌰✨"
     },
 
-    # SABADO 09:30 — Receita especial
+    # SABADO 09:30 — Coracao e colesterol
     {
         "dia": 5,
         "horario": "09:30",
-        "titulo": "🥣 Brunch de Sabado!",
-        "mensagem": "BOWL POWER: Iogurte natural + granola caseira + morango + banana + chia + mel + castanhas laminadas. Sabado merece um cafe da manha ESPECIAL! Poste no Insta e marque o Rei das Castanhas! 📸🌰👑"
+        "titulo": "❤️ Castanha do Para e o Coracao!",
+        "mensagem": "CORACAO SAUDAVEL! A castanha do Para tem gorduras insaturadas que REDUZEM o colesterol ruim (LDL) e AUMENTAM o bom (HDL). Estudos mostram efeito em apenas 48h apos o consumo! Cuide do seu coracao com 1 castanha por dia! ❤️🌰"
     },
 
-    # DOMINGO 09:00 — Educacao & Preparacao
+    # DOMINGO 09:00 — Imunidade e resumo
     {
         "dia": 6,
         "horario": "09:00",
-        "titulo": "📚 Domingo Natural!",
-        "mensagem": "GRAOS vs SEMENTES vs OLEAGINOSAS: GRAOS (aveia, quinoa) = energia + fibra. SEMENTES (chia, linhaca) = omega-3 + minerais. OLEAGINOSAS (castanhas, nozes) = gordura boa + proteina. Coma dos 3 TODOS OS DIAS! 🧠🌾🌰"
+        "titulo": "🛡️ Castanha do Para: Resumo!",
+        "mensagem": "RESUMO DA SEMANA: 1 castanha do Para por dia = Selenio (antioxidante) + Tireoide regulada + Pele bonita + Coracao protegido + Imunidade forte. O alimento mais completo da Amazonia! Ja comeu a sua hoje? 🇧🇷🌰👑"
     },
 ]
 
