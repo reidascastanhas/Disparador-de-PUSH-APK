@@ -33,66 +33,79 @@ if sys.platform == "win32":
 from config import APP_ID, API_KEY
 
 # ============================================================
-# CALENDARIO SEMANAL — SEMANA DA CASTANHA DO PARA
+# CALENDARIO SEMANAL — VITRINE DO SITE (com links)
 # 1 disparo por dia | 7 disparos por semana
+# Cada push abre a pagina do produto/categoria no site ao ser tocado
 # dia: 0=Segunda, 1=Terca, 2=Quarta, 3=Quinta, 4=Sexta, 5=Sabado, 6=Domingo
 # ============================================================
+SITE = "https://www.reidascastanhas.com.br"
+
+def utm(caminho, campanha):
+    return f"{SITE}/{caminho}?utm_source=push&utm_medium=onesignal&utm_campaign={campanha}"
+
 CALENDARIO = [
 
-    # SEGUNDA 08:00 — Selenio: o mineral da castanha do Para
+    # SEGUNDA 08:00 — Castanha do Para Premium
     {
         "dia": 0,
         "horario": "08:00",
-        "titulo": "🇧🇷 Semana da Castanha do Para!",
-        "mensagem": "VOCE SABIA? A castanha do Para e o alimento MAIS RICO EM SELENIO do planeta! Apenas 1 unidade por dia ja fornece toda a dose diaria. Selenio protege contra cancer, fortalece a tireoide e combate o envelhecimento! 🌰💚"
+        "titulo": "🌰 Castanha do Para Premium!",
+        "mensagem": "Comece a semana com o alimento mais rico em SELENIO do mundo! Nossa Castanha do Para media inteira e selecionada a dedo. 1 por dia ja faz diferenca. Toque e confira 👉",
+        "link": utm("castanha-do-para-media-inteirapremium-rei-das-castanhas", "castanha_para")
     },
 
-    # TERCA 08:00 — Dose certa
+    # TERCA 08:00 — Mix Premium Nuts 1kg
     {
         "dia": 1,
         "horario": "08:00",
-        "titulo": "🌰 Qual a dose certa?",
-        "mensagem": "CASTANHA DO PARA: a dose perfeita e 1 a 3 unidades por dia! Mais que isso pode ser excesso de selenio. Pouca quantidade, MAXIMO beneficio. Come 1 no cafe da manha e pronto! Simples, barato e poderoso! 💪✨"
+        "titulo": "🥜 Mix Premium Nuts 1kg",
+        "mensagem": "Caju + Para + Amendoas + Nozes + Goji Berry + Uva Passa + Amendoim. TUDO num pacote so! Lanche saudavel pra semana inteira, no trabalho ou na academia. Toque e garanta o seu 👉",
+        "link": utm("mix-premium-nuts-1kg-castanha-de-caju-castanha-do-para-amendoas-nozes-goji-berry-uva-passas-e-amendoim-2026-05-13-10-39-24", "mix_nuts")
     },
 
-    # QUARTA 08:30 — Tireoide e saude hormonal
+    # QUARTA 08:30 — Chas
     {
         "dia": 2,
         "horario": "08:30",
-        "titulo": "🦋 Castanha do Para e a Tireoide",
-        "mensagem": "SUA TIREOIDE PRECISA DE SELENIO! A castanha do Para ajuda a regular hormonios T3 e T4, combate o hipotireoidismo e reduz inflamacao da glandula. 1 castanha por dia = tireoide funcionando bem. Cuide da sua saude hormonal! 🦋🌰"
+        "titulo": "🍵 Quarta do Cha!",
+        "mensagem": "Detox, calmante, digestivo ou termogenico? Temos o cha certo pra cada momento do seu dia. Natural, sem conservantes e cheio de sabor. Toque e escolha o seu 👉",
+        "link": utm("chas", "chas")
     },
 
-    # QUINTA 08:00 — Receita da semana
+    # QUINTA 08:00 — Graos e Sementes
     {
         "dia": 3,
         "horario": "08:00",
-        "titulo": "👨‍🍳 Receita: Leite de Castanha do Para!",
-        "mensagem": "RECEITA FACIL: Deixe 10 castanhas do Para de molho por 8h. Bata com 500ml de agua. Coe com pano. PRONTO! Leite vegetal cremoso, rico em selenio e gordura boa. Sem lactose, sem conservante. Use em cafe, vitamina ou receitas! 🥛🌰"
+        "titulo": "🌱 Graos e Sementes",
+        "mensagem": "Chia, linhaca, quinoa, aveia, gergelim... Pequenos no tamanho, GIGANTES em nutrientes! Fibra, omega-3 e proteina vegetal pra turbinar suas refeicoes. Toque e confira 👉",
+        "link": utm("graos-e-sementes", "graos_sementes")
     },
 
-    # SEXTA 08:00 — Beleza e pele
+    # SEXTA 08:00 — Amendoa com chocolate (sextou)
     {
         "dia": 4,
         "horario": "08:00",
-        "titulo": "✨ Castanha do Para e a Beleza!",
-        "mensagem": "PELE BONITA? CASTANHA DO PARA! O selenio combate radicais livres (antienvelhecimento), fortalece unhas e cabelos, e da brilho natural a pele. Melhor que cosmetico caro! 1 castanhinha por dia = beleza de dentro pra fora! 💅🌰✨"
+        "titulo": "🍫 Sextou com Amendoa e Chocolate!",
+        "mensagem": "Merece um docinho? Amendoa Premium coberta com chocolate: crocante, intensa e irresistivel. O mimo perfeito pro fim de semana, sem culpa! Toque e peca a sua 👉",
+        "link": utm("amendoa-com-chocolate-premium-rei-das-castanhas", "amendoa_chocolate")
     },
 
-    # SABADO 09:30 — Coracao e colesterol
+    # SABADO 09:30 — Frutas Secas
     {
         "dia": 5,
         "horario": "09:30",
-        "titulo": "❤️ Castanha do Para e o Coracao!",
-        "mensagem": "CORACAO SAUDAVEL! A castanha do Para tem gorduras insaturadas que REDUZEM o colesterol ruim (LDL) e AUMENTAM o bom (HDL). Estudos mostram efeito em apenas 48h apos o consumo! Cuide do seu coracao com 1 castanha por dia! ❤️🌰"
+        "titulo": "🍑 Frutas Secas Importadas",
+        "mensagem": "Damasco turco, figo turco, ameixa, banana passa, cupuacu... Doce natural da fruta, rico em fibras e energia. Perfeito pro cafe da manha de sabado! Toque e veja todas 👉",
+        "link": utm("frutas-secas", "frutas_secas")
     },
 
-    # DOMINGO 09:00 — Imunidade e resumo
+    # DOMINGO 09:00 — Ofertas (Baixou)
     {
         "dia": 6,
         "horario": "09:00",
-        "titulo": "🛡️ Castanha do Para: Resumo!",
-        "mensagem": "RESUMO DA SEMANA: 1 castanha do Para por dia = Selenio (antioxidante) + Tireoide regulada + Pele bonita + Coracao protegido + Imunidade forte. O alimento mais completo da Amazonia! Ja comeu a sua hoje? 🇧🇷🌰👑"
+        "titulo": "🔥 BAIXOU! Ofertas da Semana",
+        "mensagem": "Domingo e dia de abastecer a despensa! Separamos produtos com PRECO REDUZIDO no site. Castanhas, frutas secas, graos e muito mais. Corre que e por tempo limitado! 👉",
+        "link": utm("baixou", "baixou")
     },
 ]
 
@@ -122,7 +135,7 @@ DATAS_ESPECIAIS = {
 # FUNÇÕES
 # ============================================================
 
-def enviar_notificacao(titulo, mensagem):
+def enviar_notificacao(titulo, mensagem, link=None):
     url = "https://onesignal.com/api/v1/notifications"
     payload = {
         "app_id": APP_ID,
@@ -130,6 +143,8 @@ def enviar_notificacao(titulo, mensagem):
         "headings": {"pt": titulo, "en": titulo},
         "contents": {"pt": mensagem, "en": mensagem},
     }
+    if link:
+        payload["url"] = link  # ao tocar no push, abre a pagina do site
     data = json.dumps(payload).encode("utf-8")
     req = urllib.request.Request(url, data=data)
     req.add_header("Content-Type", "application/json")
@@ -263,7 +278,7 @@ def rodar_bot():
                 chave = f"{chave_minuto}_{i}"
                 if chave not in enviados and deve_enviar_agora(item):
                     log(f"\n📣 Disparando: {item['titulo']}")
-                    if enviar_notificacao(item["titulo"], item["mensagem"]):
+                    if enviar_notificacao(item["titulo"], item["mensagem"], item.get("link")):
                         enviados.add(chave)
                         tentativas_falhadas = 0  # Reset contador
                     else:
